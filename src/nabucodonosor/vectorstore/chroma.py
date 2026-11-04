@@ -83,7 +83,7 @@ def similarity_search(
     for i, chunk_id in enumerate(ids):
         # ChromaDB cosine distance = 1 - similarity; clamp for float precision
         score = max(0.0, min(1.0, 1.0 - distances[i]))
-        emb = list(emb_list[i]) if emb_list is not None else None
+        emb = [float(x) for x in emb_list[i]] if emb_list is not None else None
         output.append(
             SearchResult(
                 chunk_id=chunk_id,
@@ -111,4 +111,4 @@ def get_embeddings_by_ids(
     raw = results.get("embeddings")
     if raw is None:
         return {}
-    return {chunk_id: list(emb) for chunk_id, emb in zip(results["ids"], raw)}
+    return {chunk_id: [float(x) for x in emb] for chunk_id, emb in zip(results["ids"], raw)}

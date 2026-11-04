@@ -26,6 +26,9 @@ class Settings(BaseSettings):
 
     # Retrieval
     retrieval_k: int = 5
+    retrieval_initial_k: int = 20
+    reranker_threshold: float = 0.10
+    enable_query_rewriting: bool = True
 
     # Guardrails
     max_question_length: int = 500
