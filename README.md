@@ -1,3 +1,14 @@
+---
+title: Nabucodonosor
+emoji: 🤖
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.40.0
+app_file: app/streamlit_app.py
+pinned: false
+---
+
 # Nabucodonosor 🔍
 
 > *A production-grade RAG system that answers questions about my professional background — built as a portfolio showcase of AI Engineering fundamentals.*

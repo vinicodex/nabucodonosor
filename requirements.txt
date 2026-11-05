@@ -1,0 +1,5 @@
+# HuggingFace Spaces install — pip reads this file
+# Installs the nabucodonosor package + production extras
+-e .
+sentence-transformers>=3.0.0
+groq>=0.9.0

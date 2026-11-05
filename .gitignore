@@ -218,4 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-data/
+
+# Runtime data — keep ChromaDB index but ignore cache/db files
+data/cache.db
+data/cache.db-shm
+data/cache.db-wal
