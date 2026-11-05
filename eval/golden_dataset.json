@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is Marcos's current role and company?",
+    "ground_truth": "Marcos Vinicius Nascimento is a Senior Software Engineer at Jobsity, where he builds MCP servers and Claude Code skills to enhance AI-assisted developer workflows."
+  },
+  {
+    "question": "What programming languages does Marcos primarily use?",
+    "ground_truth": "Marcos primarily uses Python, with strong experience in FastAPI, Django, Chalice, and AWS Lambda. He also has experience with JavaScript/TypeScript in some contexts."
+  },
+  {
+    "question": "What was Marcos's most impactful project at OmniChat?",
+    "ground_truth": "At OmniChat, Marcos increased search accuracy by 34% using CrewAI multi-agent systems on a platform that handled over 3 million messages per month."
+  },
+  {
+    "question": "What cloud platforms has Marcos worked with?",
+    "ground_truth": "Marcos has worked extensively with AWS (Lambda, SQS, S3, ECS) at OmniChat and GCP (Cloud Run, Pub/Sub, BigQuery) at Escola Mais."
+  },
+  {
+    "question": "What is Marcos's experience with AI and machine learning?",
+    "ground_truth": "Marcos has hands-on AI engineering experience: building MCP servers at Jobsity, implementing CrewAI multi-agent systems at OmniChat, and building a production RAG system (Nabucodonosor) using ChromaDB, Ollama, and hybrid search."
+  },
+  {
+    "question": "How does Marcos approach testing?",
+    "ground_truth": "Marcos values high test coverage — he achieved 92% test coverage at InvoiceSherpa and enforces ruff, mypy, and pytest in his projects."
+  },
+  {
+    "question": "What was Marcos's role at OmniChat?",
+    "ground_truth": "Marcos was a Product Engineer III at OmniChat, where he worked on a conversational commerce platform processing 3M+ messages/month using Python, FastAPI, and AWS."
+  },
+  {
+    "question": "What integrations did Marcos build at InvoiceSherpa?",
+    "ground_truth": "At InvoiceSherpa, Marcos built QuickBooks and Stripe payment integrations, achieving 92% test coverage on a Python/FastAPI backend deployed on GCP."
+  },
+  {
+    "question": "What is Marcos's experience with Kubernetes?",
+    "ground_truth": "Marcos worked with Kubernetes at Escola Mais, deploying Django applications with K8s, Pub/Sub, and BigQuery on GCP."
+  },
+  {
+    "question": "What mentoring experience does Marcos have?",
+    "ground_truth": "Marcos led technical mentoring for junior developers at Logical IT, where he also worked as a Senior Software Engineer building FastAPI and AWS Chalice services."
+  },
+  {
+    "question": "What databases has Marcos used professionally?",
+    "ground_truth": "Marcos has worked with PostgreSQL, Redis, SQLite, and NoSQL databases. He has also used vector databases including ChromaDB for RAG applications."
+  },
+  {
+    "question": "What is Marcos's educational background?",
+    "ground_truth": "Marcos holds a degree in Computer Science or a related field, complemented by hands-on experience in AI engineering, cloud infrastructure, and backend development."
+  },
+  {
+    "question": "How many years of experience does Marcos have as a software engineer?",
+    "ground_truth": "Marcos has over 5 years of professional software engineering experience, having worked at companies including Jobsity, OmniChat, Logical IT, InvoiceSherpa, and Escola Mais."
+  },
+  {
+    "question": "What is Nabucodonosor?",
+    "ground_truth": "Nabucodonosor is Marcos's portfolio RAG project that answers questions about his CV. It uses hybrid search (BM25 + ChromaDB), query rewriting, bi-encoder reranking, a two-tier cache, and guardrails."
+  },
+  {
+    "question": "What messaging systems has Marcos worked with?",
+    "ground_truth": "Marcos has worked with AWS SQS for message queuing at OmniChat and Google Cloud Pub/Sub at Escola Mais."
+  },
+  {
+    "question": "What type of company is Jobsity?",
+    "ground_truth": "Jobsity is a nearshore software development company where Marcos works as a Senior Software Engineer building developer tools with AI, including MCP servers and Claude Code skills."
+  },
+  {
+    "question": "What is Marcos's experience with Docker?",
+    "ground_truth": "Marcos uses Docker and Docker Compose in his projects, including the Nabucodonosor RAG system which uses Docker Compose to orchestrate Ollama and the application service."
+  },
+  {
+    "question": "What search and retrieval techniques does Marcos know?",
+    "ground_truth": "Marcos implemented production-grade retrieval in Nabucodonosor: BM25 sparse search, ChromaDB dense search, Reciprocal Rank Fusion, bi-encoder reranking, and semantic caching."
+  },
+  {
+    "question": "What was the scale of the system Marcos worked on at OmniChat?",
+    "ground_truth": "At OmniChat, Marcos worked on a conversational commerce platform that processed over 3 million messages per month, achieving 34% search accuracy improvement with CrewAI."
+  },
+  {
+    "question": "What soft skills make Marcos a strong engineering candidate?",
+    "ground_truth": "Marcos demonstrates ownership, mentoring ability (Logical IT), product thinking (OmniChat), and a track record of measurable impact like 34% search accuracy improvement and 92% test coverage."
+  },
+  {
+    "question": "What LLM providers has Marcos integrated?",
+    "ground_truth": "Marcos has integrated Ollama (local open-source LLMs) and Groq (cloud API for fast inference) in the Nabucodonosor project, with an abstraction layer for easy switching."
+  },
+  {
+    "question": "How does Marcos handle CI/CD in his projects?",
+    "ground_truth": "Marcos uses GitHub Actions for CI with ruff (lint/format), mypy (type checking), and pytest. His projects include a Makefile for running all checks locally."
+  },
+  {
+    "question": "What is Marcos's location?",
+    "ground_truth": "Marcos Vinicius Nascimento is based in Brazil and works remotely for international companies including Jobsity."
+  },
+  {
+    "question": "What vector database does Marcos use?",
+    "ground_truth": "Marcos uses ChromaDB as the vector database in Nabucodonosor, with both a main collection for CV chunks and a separate semantic cache collection."
+  },
+  {
+    "question": "What API frameworks does Marcos use?",
+    "ground_truth": "Marcos uses FastAPI as his primary Python API framework. He also has experience with AWS Chalice (serverless), Django REST Framework, and Streamlit for UI."
+  }
+]
