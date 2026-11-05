@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nabucodonosor
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: LLM_PROVIDER
+        value: groq
+      - key: EMBED_PROVIDER
+        value: sentence-transformers
+      - key: EMBED_DIM
+        value: "384"
+      - key: GROQ_API_KEY
+        sync: false
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
