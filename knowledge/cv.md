@@ -9,6 +9,12 @@
 
 ---
 
+## Current Role
+
+**Sr Software Engineer at Jobsity** (Jun 2026 – Present) — building MCP servers, Claude Code skills, and AI-powered developer tooling for financial-sector clients.
+
+---
+
 ## Summary
 
 Senior Backend Engineer with 5+ years building and scaling distributed systems in Python across fintech, healthtech, edtech, insurance, and e-commerce. Specialized in high-throughput APIs with FastAPI and Django, event-driven architectures on AWS, and AI/LLM-powered applications.
