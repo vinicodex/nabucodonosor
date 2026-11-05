@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from nabucodonosor.cache import exact as exact_cache
 from nabucodonosor.config import settings
 from nabucodonosor.embedding.embedder import get_embedder
 from nabucodonosor.ingestion.chunker import chunk
@@ -51,6 +52,10 @@ def main(knowledge_dir: Path, reset: bool) -> None:
     print(f"\nEmbedding and upserting into '{settings.collection_name}' ...")
     inserted = upsert_chunks(collection, all_chunks, embedder)
     print(f"Done. {inserted} chunks stored in ChromaDB at {settings.chroma_path}")
+
+    deleted = exact_cache.purge_expired(settings.cache_db_path, ttl_hours=0)
+    if deleted:
+        print(f"Cache invalidated: {deleted} stale entr{'y' if deleted == 1 else 'ies'} purged.")
 
 
 if __name__ == "__main__":
