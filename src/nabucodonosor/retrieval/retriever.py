@@ -92,9 +92,9 @@ class BM25IndexBuilder:
     extra: dict[str, object] = field(default_factory=dict)
 
     def build_from_collection(self, collection: chromadb.Collection) -> BM25Index:
-        results = collection.get(include=["documents"])  # type: ignore[arg-type]
+        results = collection.get(include=["documents"])  # type: ignore[arg-type,unused-ignore]
         ids: list[str] = results["ids"]
-        documents: list[str] = results["documents"] or []  # type: ignore[assignment]
+        documents: list[str] = results["documents"] or []  # type: ignore[assignment,unused-ignore]
 
         index = BM25Index()
         if ids:

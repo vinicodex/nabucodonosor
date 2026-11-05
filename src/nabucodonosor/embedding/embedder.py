@@ -30,17 +30,17 @@ class OllamaEmbedder(BaseEmbedder):
 
     def embed(self, text: str) -> list[float]:
         response = self._client.embed(model=self._model, input=text)
-        return response.embeddings[0]  # type: ignore[index]
+        return list(response.embeddings[0])  # type: ignore[index,unused-ignore]
 
     def embed_batch(self, texts: list[str]) -> list[list[float]]:
         response = self._client.embed(model=self._model, input=texts)
-        return response.embeddings  # type: ignore[return-value]
+        return [list(e) for e in response.embeddings]  # type: ignore[union-attr,unused-ignore]
 
 
 class SentenceTransformerEmbedder(BaseEmbedder):
     def __init__(self, model: str) -> None:
         try:
-            from sentence_transformers import SentenceTransformer  # type: ignore[import-untyped]
+            from sentence_transformers import SentenceTransformer  # type: ignore[import-untyped,unused-ignore]
 
             self._model = SentenceTransformer(model)
         except ImportError as exc:

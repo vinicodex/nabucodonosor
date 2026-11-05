@@ -43,8 +43,8 @@ def upsert_chunks(
     collection.upsert(
         ids=ids,
         documents=documents,
-        metadatas=metadatas,
-        embeddings=embeddings,
+        metadatas=metadatas,  # type: ignore[arg-type]
+        embeddings=embeddings,  # type: ignore[arg-type]
     )
     return len(chunks)
 
@@ -64,7 +64,7 @@ def similarity_search(
         return []
 
     results = collection.query(
-        query_embeddings=[query_embedding],
+        query_embeddings=[query_embedding],  # type: ignore[arg-type]
         n_results=min(k, count),
         include=include,  # type: ignore[arg-type]
     )
@@ -88,7 +88,7 @@ def similarity_search(
             SearchResult(
                 chunk_id=chunk_id,
                 content=documents[i],
-                metadata=dict(metadatas[i]),
+                metadata={str(k): str(v) for k, v in metadatas[i].items()},
                 score=score,
                 embedding=emb,
             )
@@ -104,7 +104,7 @@ def get_embeddings_by_ids(
     if not ids:
         return {}
 
-    results = collection.get(ids=ids, include=["embeddings"])  # type: ignore[arg-type]
+    results = collection.get(ids=ids, include=["embeddings"])
     if not results["ids"]:
         return {}
 

@@ -79,9 +79,9 @@ def run_eval(
 
 
 def _run_ragas(samples: list[EvalSample], pipeline: RAGPipeline) -> dict[str, float]:
-    from datasets import Dataset  # type: ignore[import-untyped]
-    from ragas import evaluate  # type: ignore[import-untyped]
-    from ragas.metrics import (  # type: ignore[import-untyped]
+    from datasets import Dataset  # type: ignore[import-untyped,unused-ignore]
+    from ragas import evaluate  # type: ignore[import-untyped,unused-ignore]
+    from ragas.metrics import (  # type: ignore[import-untyped,unused-ignore]
         answer_relevancy,
         context_precision,
         faithfulness,
@@ -99,4 +99,4 @@ def _run_ragas(samples: list[EvalSample], pipeline: RAGPipeline) -> dict[str, fl
 
     ds = Dataset.from_dict(ragas_data)
     result = evaluate(ds, metrics=[faithfulness, answer_relevancy, context_precision])
-    return dict(result)
+    return {str(k): float(v) for k, v in result.items()}  # type: ignore[union-attr]

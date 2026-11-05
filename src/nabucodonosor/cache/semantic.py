@@ -26,7 +26,7 @@ def get(
 
         q_emb = embedder.embed(question)
         results = collection.query(
-            query_embeddings=[q_emb],
+            query_embeddings=[q_emb],  # type: ignore[arg-type]
             n_results=1,
             include=["documents", "distances"],
         )
@@ -62,7 +62,7 @@ def set(
         collection.upsert(
             ids=[cache_id],
             documents=[answer],
-            embeddings=[q_emb],
+            embeddings=[q_emb],  # type: ignore[arg-type]
             metadatas=[{"question": question[:200]}],
         )
     except Exception:
@@ -79,7 +79,7 @@ def similarity_to_cache(
         if collection.count() == 0:
             return 0.0
 
-        results = collection.get(include=["embeddings"])  # type: ignore[arg-type]
+        results = collection.get(include=["embeddings"])  # type: ignore[arg-type,unused-ignore]
         raw = results.get("embeddings")
         if raw is None:
             return 0.0

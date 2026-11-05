@@ -30,13 +30,13 @@ class OllamaLLM(BaseLLM):
                 {"role": "user", "content": prompt},
             ],
         )
-        return response.message.content or ""  # type: ignore[union-attr]
+        return response.message.content or ""  # type: ignore[union-attr,unused-ignore]
 
 
 class GroqLLM(BaseLLM):
     def __init__(self, api_key: str, model: str) -> None:
         try:
-            from groq import Groq  # type: ignore[import-untyped]
+            from groq import Groq  # type: ignore[import-untyped,unused-ignore]
 
             self._client = Groq(api_key=api_key)
         except ImportError as exc:
