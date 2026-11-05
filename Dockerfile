@@ -5,10 +5,11 @@ WORKDIR /app
 RUN pip install uv
 
 COPY pyproject.toml uv.lock ./
-RUN uv sync --extra dev
+RUN uv sync --extra prod --extra groq
 
 COPY . .
 
-EXPOSE 8501
+EXPOSE 7860
 
-CMD ["uv", "run", "streamlit", "run", "app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+CMD ["uv", "run", "streamlit", "run", "app/streamlit_app.py", \
+     "--server.address=0.0.0.0", "--server.port=7860"]
